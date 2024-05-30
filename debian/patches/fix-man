@@ -1,0 +1,54 @@
+Description: Patch to fix man pages
+ Added a list of programs to libmbus.pod to fix the whatis entry.
+ Added to missing man pages to the synopsis section.
+ Added the missing link file for mbus-tcp-application-reset.1. 
+Author: Joachim Zobel <jz-2017@heute-morgen.de>
+Forwarded: no
+---
+This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
+--- a/bin/libmbus.pod
++++ b/bin/libmbus.pod
+@@ -1,6 +1,12 @@
+ =head1 NAME
+ 
+-libmbus (utilities) - support utilities to the libmbus. libmbus is an open
++libmbus utilities mbus-tcp-scan, mbus-tcp-request-data,
++mbus-tcp-request-data-multi-reply, mbus-tcp-select-secondary,
++mbus-tcp-scan-secondary, mbus-tcp-raw-send, mbus-tcp-application-reset,
++mbus-serial-scan, mbus-serial-request-data,
++mbus-serial-request-data-multi-reply, mbus-serial-select-secondary,
++mbus-serial-scan-secondary, mbus-serial-switch-baudrate,
++mbus-serial-set-address - support utilities to the libmbus. libmbus is an open
+ source M-bus (Meter-Bus) library. The Meter-Bus is a standard for reading out
+ meter data from electricity meters, heat meters, gas meters, etc. The role
+ of the libmbus library is to decode/encode M-bus data, and to handle 
+@@ -34,6 +40,10 @@
+ 
+ B<mbus-tcp-raw-send> [-d] host port mbus-address [file]
+ 
++B<mbus-serial-set-address> [-d] [-b BAUDRATE] device mbus-address new-primary-address
++
++B<mbus-tcp-application-reset> [-d] host port mbus-address [subcode]
++
+ =head1 DESCRIPTION
+ 
+ B<mbus-serial-switch-baudrate> - attempts to switch the communication speed of
+--- a/bin/Makefile.am
++++ b/bin/Makefile.am
+@@ -91,7 +91,10 @@
+                 mbus-serial-request-data-multi-reply.1 \
+                 mbus-serial-select-secondary.1 \
+                 mbus-serial-scan-secondary.1 \
+-                mbus-serial-switch-baudrate.1
++                mbus-serial-switch-baudrate.1 \
++                mbus-tcp-application-reset.1 \
++                mbus-serial-set-address.1
++
+ 
+ .pod.1:
+ 	pod2man --release=$(VERSION) --center=$(PACKAGE) $< \
+--- /dev/null
++++ b/bin/mbus-tcp-application-reset.1
+@@ -0,0 +1,2 @@
++.so man1/libmbus.1
++
