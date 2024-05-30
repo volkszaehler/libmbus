@@ -1,6 +1,6 @@
 Source: libmbus
 Priority: optional
-Maintainer: Robert Johansson <rob@raditex.nu>
+Maintainer: Joachim Zobel <jz-2017@heute-morgen.de> 
 Build-Depends: debhelper (>= 7.0.50~)
 Standards-Version: 3.8.4
 Section: libs
