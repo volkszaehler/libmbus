@@ -1,0 +1,18 @@
+Description: Renamed package to libmbus0
+ The Debian package name should match the soname, which is libmbus.so.0. 
+ To achieve this the package name was changed. 
+Author: Joachim Zobel <jz-2017@heute-morgen.de>
+Forwarded: no
+---
+This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
+--- a/clean.sh
++++ b/clean.sh
+@@ -63,7 +63,7 @@
+     && rm -f test/mbus_parse_hex \
+     && rm -f test/mbus_unit_test1 \
+     && rm -f -r debian/libmbus-dev \
+-    && rm -f -r debian/libmbus1 \
++    && rm -f -r debian/libmbus0 \
+     && rm -f -r debian/tmp \
+     && rm -f -r debian/*.log \
+     && rm -f -r debian/*.substvars \
