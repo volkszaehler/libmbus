@@ -5,6 +5,10 @@
 execute_before_dh_autoreconf:
 	mkdir -p m4 libltdl/config
 
+# Some files reappear when clean.sh is called from make 
+execute_after_dh_clean:
+	./clean.sh
+
 %:
 	dh $@ --with autoreconf
 
