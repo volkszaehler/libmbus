@@ -2,7 +2,7 @@ Source: libmbus
 Priority: optional
 Maintainer: Joachim Zobel <jz-2017@heute-morgen.de> 
 Build-Depends: debhelper (>= 7.0.50~)
-Standards-Version: 3.8.4
+Standards-Version: 4.6.2
 Section: libs
 Homepage: http://www.rscada.se/libmbus
 
@@ -10,14 +10,23 @@ Package: libmbus-dev
 Section: libdevel
 Architecture: any
 Depends: libmbus0 (= ${binary:Version}), ${misc:Depends}
-Description: FreeSCADA M-Bus Library Development files.
+Description: FreeSCADA M-Bus Library Development files
  A free and open-source library for M-Bus (Meter Bus) from the rSCADA project,
- including development files.
+ including development files. 
+ The Meter-Bus is a standard for reading out meter data from electricity 
+ meters, heat meters, gas meters, etc. The M-bus standard deals with both the
+ electrical signals on the M-Bus, and the protocol and data format used in 
+ transmissions on the M-Bus. The role of libmbus is to decode/encode M-bus 
+ data, and to handle the communication with M-Bus devices.
 
 Package: libmbus0
-Section: libs
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: FreeSCADA M-Bus Library.
+Description: FreeSCADA M-Bus Library
  A free and open-source library for M-Bus (Meter Bus) from the rSCADA project.
+ The Meter-Bus is a standard for reading out meter data from electricity 
+ meters, heat meters, gas meters, etc. The M-bus standard deals with both the
+ electrical signals on the M-Bus, and the protocol and data format used in 
+ transmissions on the M-Bus. The role of libmbus is to decode/encode M-bus 
+ data, and to handle the communication with M-Bus devices.
 
