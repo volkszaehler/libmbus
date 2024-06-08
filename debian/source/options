@@ -1,0 +1,2 @@
+# Unfortunately  Github action can not be below debian/
+extend-diff-ignore=.github/workflows/debuild.yml
