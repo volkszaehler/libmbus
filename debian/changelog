@@ -2,6 +2,7 @@ libmbus (0.9.0+git20250914-1) unstable; urgency=medium
 
   * Upstream code changes
   * Added forky to debuild workflow 
+  * Fixed build on ubuntu-latest
 
  -- Joachim Zobel <jz-2017@heute-morgen.de>  Sun, 14 Sep 2025 13:50:21 +0200
 

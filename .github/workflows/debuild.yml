@@ -24,7 +24,7 @@ jobs:
       - name: update repo information
         run: sudo apt-get update
       - name: install devscripts
-        run: sudo apt-get install equivs devscripts git-buildpackage pipx hub
+        run: sudo apt-get install equivs devscripts build-essential git-buildpackage pipx hub
       - name: Create source package
         # Using gbp has the advantage of creating reproducible tar balls
         run: |
@@ -34,7 +34,7 @@ jobs:
       - name: install dependencies
         run: |
           sudo mk-build-deps -ri
-          rm libmbus-build-deps_*
+          rm -f libmbus-build-deps_*
       - name: debuild
         run: debuild --no-sign
       - name: import GPG key
@@ -158,7 +158,7 @@ jobs:
       - name: upload as Release
         run: |
           set -x
-          if [[ "${{ matrix.distribution }}" != forky]]; then
+          if [[ "${{ matrix.distribution }}" != forky ]]; then
             exit
           fi
           assets=()
